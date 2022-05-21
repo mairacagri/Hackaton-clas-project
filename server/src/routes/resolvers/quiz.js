@@ -9,7 +9,7 @@ function getNextQuestion(req, res) {
         userId = _.uniqueId("user_");
         users[userId] = new quizUser(userId)
     }
-    res.headers.set('userId', userId);
+    res.set('userId', userId);
     let question = users[userId].getNextQuestion();
     res.json({
         question: question.question,

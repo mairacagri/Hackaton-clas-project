@@ -1,28 +1,27 @@
 const _ = require('lodash');
-
-const questions = []
+const data = require('../questions-data.json')
 
 class quizUser{
-    _userId = ''
-    _questions = []
+    userId = ''
+    questions = []
     constructor(userId) {
-        this._userId = userId
-        this._questions = questions
+        this.userId = userId
+        this.questions = data
     }
-    _answers = {}
+    answers = {}
     
     setAnswer(questionId, answerId) {
-        this._answers[questionId] = answerId
+        this.answers[questionId] = answerId
     }
     getNextQuestion() {
-        let question = _.sample(this._questions)
-        this._questions = _.without(this._questions, question)
+        let question = _.sample(this.questions)
+        this.questions = _.without(this.questions, question)
         return question
     }
     getScore() {
         let score = 0
-        for (let questionId in this._answers) {
-            let answerId = this._answers[questionId]
+        for (let questionId in this.answers) {
+            let answerId = this.answers[questionId]
             let question = quizService.getQuestion(questionId)
             if (question.correct == answerId) {
                 score++
