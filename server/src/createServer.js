@@ -8,7 +8,6 @@ module.exports = function () {
   app.use(
     cors({
       allowedHeaders: ["userId"],
-      origin: "http://localhost",
     })
   );
   app.use("/", router);
