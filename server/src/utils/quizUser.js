@@ -2,7 +2,6 @@ const _ = require('lodash');
 
 const questions = []
 
-
 class quizUser{
     _userId = ''
     _questions = []
@@ -32,3 +31,5 @@ class quizUser{
         return score/questions.length
     }
 }
+
+module.exports = quizUser
