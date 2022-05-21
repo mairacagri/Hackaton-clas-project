@@ -30,7 +30,7 @@ const Photos = () => {
     console.log("Hi");
   }
   return (
-    <div className="image-slider-container">
+    <div>
       {/* {images.map((image) => {
         return (
           <div>
@@ -38,7 +38,12 @@ const Photos = () => {
           </div>
         );
       })} */}
-      <img src={images[count % images.length]} alt="" onClick={changeImage} />
+      <img
+        className="image-slider-container"
+        src={images[count % images.length]}
+        alt=""
+        onClick={changeImage}
+      />
     </div>
   );
 };
