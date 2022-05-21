@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', homePage);
 router.get('/api/v1/', homePage);
-router.get('/api/v1/', homePage);
+router.get('/api/v1/quiz', quiz);
 router.get('*', routeNotFound);
 
 module.exports = router;
