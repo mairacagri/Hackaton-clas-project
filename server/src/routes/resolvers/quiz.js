@@ -23,6 +23,11 @@ function checkAnswer(req, res) {
     let questionId = req.params.id;
     let answerId = req.params.answer;
     users[userId].setAnswer(questionId, answerId);
+    if (users[userId].questions.length === 0) {
+        res.json({
+            score: users[userId].getScore()
+        });
+    }
     const correctAnswer = questions.find(({id}) => id === questionId).correct
     res.json({
         userAnswer: answerId,
