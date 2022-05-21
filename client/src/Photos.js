@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 // import BackgroundSlider from "react-background-slider";
 
@@ -29,7 +30,7 @@ const Photos = () => {
     console.log("Hi");
   }
   return (
-    <div>
+    <div className="image-slider-container">
       {/* {images.map((image) => {
         return (
           <div>
@@ -37,7 +38,7 @@ const Photos = () => {
           </div>
         );
       })} */}
-      <img src={images[count]} alt="" onClick={changeImage} />
+      <img src={images[count % images.length]} alt="" onClick={changeImage} />
     </div>
   );
 };
