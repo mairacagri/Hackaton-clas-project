@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
 const Stories = () => {
+
   const [text, setText] = useState("");
 
   const handleUserText = (event) =>  {
@@ -35,7 +36,7 @@ const Stories = () => {
       <button>Submit</button>
     </form>
   );
-    
+ 
 }
 
 export default Stories
